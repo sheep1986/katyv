@@ -56,8 +56,11 @@ export default function RootLayout({
               if (history.scrollRestoration) {
                 history.scrollRestoration = 'manual';
               }
-              if (!window.location.hash) {
-                window.scrollTo(0, 0);
+              // Always scroll to top on page load/refresh
+              window.scrollTo(0, 0);
+              // Clear hash on home page refresh (but keep for other pages)
+              if (window.location.pathname === '/' && window.location.hash) {
+                history.replaceState(null, '', '/');
               }
             `,
           }}

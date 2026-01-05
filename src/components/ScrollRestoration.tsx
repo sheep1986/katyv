@@ -1,48 +1,43 @@
 'use client';
 
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-
-// Use useLayoutEffect on client, useEffect on server
-const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default function ScrollRestoration() {
   const pathname = usePathname();
+  const isInitialMount = useRef(true);
 
-  // Disable browser's automatic scroll restoration immediately
-  useIsomorphicLayoutEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-
-    // Force scroll to top on initial load (before paint)
-    const hash = window.location.hash;
-    if (!hash) {
-      window.scrollTo(0, 0);
-    }
-  }, []);
-
-  // Handle scroll on navigation
+  // Handle anchor link clicks on the page
   useEffect(() => {
-    const hash = window.location.hash;
-
-    if (hash) {
-      // If there's a hash, scroll to the element after a short delay
-      setTimeout(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
         const element = document.querySelector(hash);
         if (element) {
-          const navHeight = 80; // Account for fixed nav
+          const navHeight = 80;
           const elementPosition = element.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: elementPosition - navHeight,
             behavior: 'smooth',
           });
         }
-      }, 100);
-    } else {
-      // No hash, scroll to top
-      window.scrollTo(0, 0);
+      }
+    };
+
+    // Listen for hash changes (anchor clicks)
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Handle page navigation (not initial load - that's handled by inline script)
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
     }
+
+    // On pathname change (actual navigation), scroll to top
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
