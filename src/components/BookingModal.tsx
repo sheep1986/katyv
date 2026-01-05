@@ -10,6 +10,13 @@ interface BookingModalProps {
 
 const CALENDLY_URL = 'https://calendly.com/fun-adventures-by-katy/30min';
 
+// Stripe payment links - UPDATE THESE with your actual Stripe payment links
+const STRIPE_LINKS: { [key: string]: string } = {
+  single: 'STRIPE_LINK_EQ_INTENSIVE', // Replace with actual link
+  core: 'STRIPE_LINK_CORE_PROGRAM', // Replace with actual link
+  vip: 'STRIPE_LINK_VIP_IMMERSION', // Replace with actual link
+};
+
 declare global {
   interface Window {
     Calendly?: {
@@ -29,6 +36,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     goal: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const openCalendlyPopup = () => {
     if (window.Calendly) {
@@ -38,7 +46,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.service === 'discovery') {
@@ -47,18 +55,56 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       return;
     }
 
-    alert('Thank you! Katerina will be in touch within 24 hours.');
-    onClose();
-    setFormData({
-      service: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      country: '',
-      goal: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Send email notification
+      const response = await fetch('/api/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          service: formData.service,
+          goals: `Goal: ${formData.goal || 'Not specified'}. Country: ${formData.country || 'Not specified'}. Phone: ${formData.phone || 'Not provided'}. Message: ${formData.message || 'None'}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      // Get the Stripe link and redirect
+      const stripeLink = STRIPE_LINKS[formData.service];
+
+      if (stripeLink && !stripeLink.startsWith('STRIPE_LINK')) {
+        // Redirect to Stripe
+        window.location.href = stripeLink;
+      } else {
+        // Stripe links not set up yet - show confirmation
+        alert('Thank you for your interest! Katerina will be in touch within 24 hours to complete your booking.');
+        onClose();
+      }
+
+      // Reset form
+      setFormData({
+        service: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        country: '',
+        goal: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Something went wrong. Please try again or email hello@katerinav.com directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -233,7 +279,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   />
                 </div>
 
-                <button type="submit" className={styles.submitBtn}>Request Booking</button>
+                <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                  {isSubmitting ? 'Processing...' : 'Continue to Payment'}
+                </button>
               </div>
             )}
 
