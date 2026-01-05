@@ -11,17 +11,10 @@ const categories = ['All Posts', 'Self-Awareness', 'Leadership', 'Relationships'
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All Posts');
-  const [email, setEmail] = useState('');
 
   const filteredPosts = activeCategory === 'All Posts'
     ? posts
     : posts.filter(post => post.category === activeCategory || (activeCategory === 'All Posts' && post.featured));
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for subscribing! Check your inbox for confirmation.');
-    setEmail('');
-  };
 
   return (
     <>
@@ -100,21 +93,6 @@ export default function Blog() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className={styles.newsletter}>
-        <h2>Get EQ Insights Weekly</h2>
-        <p>Join a growing community of leaders receiving practical emotional intelligence tips every Thursday.</p>
-        <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button type="submit">SUBSCRIBE</button>
-        </form>
       </section>
       <ScrollToTop />
     </>
