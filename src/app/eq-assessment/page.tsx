@@ -152,7 +152,7 @@ const questions = [
       { text: 'Offer solutions or tell them what they should do', score: 1 },
       { text: 'Share a similar experience of my own', score: 2 },
       { text: 'Listen and try to understand how they\'re feeling', score: 3 },
-      { text: 'Create space for them to express themselves fully and validate their experience', score: 4 }
+      { text: 'Create space for them to express themselves fully and ask if I can help', score: 4 }
     ]
   },
   {
@@ -172,8 +172,8 @@ const questions = [
     text: 'When someone has a very different perspective than yours, you typically...',
     options: [
       { text: 'Struggle to understand how they could see it that way', score: 1 },
-      { text: 'Acknowledge their view but internally dismiss it', score: 2 },
-      { text: 'Try to understand their reasoning, even if you disagree', score: 3 },
+      { text: 'Try to convince them why my perspective is correct', score: 2 },
+      { text: 'Agree that we may see things differently and move on', score: 3 },
       { text: 'Genuinely explore their perspective and often gain new insights', score: 4 }
     ]
   },
@@ -207,7 +207,7 @@ const questions = [
     options: [
       { text: 'I struggle to get buy-in unless I have formal authority', score: 1 },
       { text: 'I can sometimes persuade others but it feels like an effort', score: 2 },
-      { text: 'I generally build agreement through clear communication', score: 3 },
+      { text: 'I rely on facts and logic to make my case', score: 3 },
       { text: 'I naturally create buy-in by connecting with others\' values and motivations', score: 4 }
     ]
   },
@@ -229,7 +229,7 @@ const questions = [
     options: [
       { text: 'Avoid getting involved or take sides', score: 1 },
       { text: 'Feel uncomfortable but try to help if asked', score: 2 },
-      { text: 'Help mediate and find common ground', score: 3 },
+      { text: 'Encourage both parties to calm down and talk it out', score: 3 },
       { text: 'Facilitate resolution while addressing underlying issues and emotions', score: 4 }
     ]
   },
