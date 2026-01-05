@@ -1,0 +1,325 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+  background: white;
+  max-width: 580px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+  border-radius: 4px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: #666;
+}
+
+.closeBtn:hover {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: white;
+}
+
+.header {
+  padding: 40px 40px 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #faf9f7 0%, #fff 100%);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.headerTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e8847c;
+  margin-bottom: 12px;
+}
+
+.header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.header p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.body {
+  padding: 30px 40px 40px;
+}
+
+.programSection {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.programCard {
+  padding: 20px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  background: white;
+}
+
+.programCard:hover {
+  border-color: #ccc;
+}
+
+.programCard.selected {
+  border-color: #e8847c;
+  background: #fdfaf9;
+}
+
+.discoveryCard {
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.programBadge {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  background: #e8847c;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 0 0 4px 4px;
+}
+
+.programHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.programHeader h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.programPrice {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8847c;
+}
+
+.programDesc {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.paidPrograms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.paidPrograms .programCard {
+  border-radius: 4px;
+}
+
+.paidPrograms .programHeader {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.paidPrograms .programHeader h3 {
+  font-size: 14px;
+}
+
+.paidPrograms .programPrice {
+  font-size: 13px;
+}
+
+.paidPrograms .programDesc {
+  font-size: 12px;
+}
+
+.discoveryBtn {
+  width: 100%;
+  padding: 18px 24px;
+  background: #e8847c;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.discoveryBtn:hover {
+  background: #d4736b;
+}
+
+.formSection {
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #bbb;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #e8847c;
+  background: white;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  background: #e8847c;
+}
+
+.selectPrompt {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 20px;
+  background: #f9f9f7;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 24px 24px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .body {
+    padding: 24px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .paidPrograms {
+    grid-template-columns: 1fr;
+  }
+}
