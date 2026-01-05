@@ -224,7 +224,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <div className={styles.cta}>
           <h3>Ready to develop your emotional intelligence?</h3>
-          <p>Book a free 15-minute discovery call to explore how EQ coaching can transform your leadership and relationships.</p>
+          <p>Book a free 30-minute discovery call to explore how EQ coaching can transform your leadership and relationships.</p>
           <Link href="/#contact" className={styles.ctaBtn}>BOOK YOUR FREE CALL</Link>
         </div>
 

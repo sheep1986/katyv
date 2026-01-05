@@ -356,7 +356,7 @@ export default function Home() {
           <div className={styles.ctaContent}>
             <span className={styles.ctaEyebrow}>Start Your Journey</span>
             <h2>Ready to Transform Your Emotional Intelligence?</h2>
-            <p>Book a free 15-minute discovery call. We'll discuss your goals, challenges, and how EQ coaching can help you achieve the breakthrough you're looking for.</p>
+            <p>Book a free 30-minute discovery call. We'll discuss your goals, challenges, and how EQ coaching can help you achieve the breakthrough you're looking for.</p>
             <div className={styles.ctaButtons}>
               <button onClick={() => setIsModalOpen(true)} className={styles.ctaBtn}>
                 BOOK FREE DISCOVERY CALL
@@ -370,7 +370,7 @@ export default function Home() {
           <div className={styles.ctaFeatures}>
             <div className={styles.ctaFeature}>
               <span className={styles.ctaIcon}>✓</span>
-              <span>15-minute video call</span>
+              <span>30-minute video call</span>
             </div>
             <div className={styles.ctaFeature}>
               <span className={styles.ctaIcon}>✓</span>

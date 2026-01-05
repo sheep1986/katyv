@@ -85,7 +85,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               >
                 <div className={styles.programHeader}>
                   <h3>Free Discovery Call</h3>
-                  <span className={styles.programPrice}>15 min</span>
+                  <span className={styles.programPrice}>30 min</span>
                 </div>
                 <p className={styles.programDesc}>Let&apos;s chat about your goals and see if we&apos;re a good fit</p>
               </div>
