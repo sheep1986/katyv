@@ -6,13 +6,19 @@ import { usePathname } from 'next/navigation';
 export default function ScrollRestoration() {
   const pathname = usePathname();
 
+  // Disable browser's automatic scroll restoration on mount
   useEffect(() => {
-    // Check if there's a hash in the URL
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  // Handle scroll on page load and navigation
+  useEffect(() => {
     const hash = window.location.hash;
 
     if (hash) {
       // If there's a hash, scroll to the element after a short delay
-      // to allow the page to render
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
