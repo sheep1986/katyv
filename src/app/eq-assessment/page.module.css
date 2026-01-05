@@ -451,70 +451,387 @@
   background: #d4706a;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 30px;
   }
 
   .heroContent {
-    max-width: 100%;
-  }
-
-  .heroImage {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
-  .focusGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
+  .heroImage {
+    max-width: 450px;
+    margin: 0 auto;
   }
 
-  .question h2 {
-    font-size: 22px;
+  .assessment {
+    padding: 50px 30px;
   }
 
-  .hero,
-  .assessment,
   .results {
-    padding: 40px 20px;
+    padding: 50px 30px 70px;
+  }
+
+  .focusGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
   .focusAreas {
+    padding: 35px 30px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .backLink {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .heroImage {
+    max-width: 320px;
+  }
+
+  .assessment {
     padding: 30px 20px;
   }
 
-  .nextSteps {
-    padding: 40px 20px;
+  .progressContainer {
+    margin-bottom: 30px;
   }
 
-  .category {
-    padding: 20px;
+  .progressInfo {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .progressText {
+    font-size: 12px;
+  }
+
+  .progressCategory {
+    font-size: 11px;
+  }
+
+  .questionNumber {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+
+  .question h2 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .options {
+    gap: 10px;
+  }
+
+  .option {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .optionCircle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .option.selected .optionCircle::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .optionText {
+    font-size: 14px;
+  }
+
+  .navButtons {
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 12px;
+  }
+
+  .results {
+    padding: 30px 20px 50px;
   }
 
   .resultsHeader {
     margin-bottom: 40px;
   }
 
+  .resultsEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
   .scoreCircle {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 24px;
   }
 
   .scoreNumber {
-    font-size: 46px;
+    font-size: 42px;
+  }
+
+  .scoreLabel {
+    font-size: 10px;
+    letter-spacing: 1.5px;
   }
 
   .results h2 {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .resultsText {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .categories {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .category {
+    padding: 20px;
+    border-left-width: 3px;
+  }
+
+  .categoryHeader {
+    margin-bottom: 10px;
+  }
+
+  .category h4 {
+    font-size: 14px;
+  }
+
+  .categoryScore {
+    font-size: 16px;
+  }
+
+  .categoryBar {
+    height: 6px;
+    margin-bottom: 10px;
+  }
+
+  .categoryDesc {
+    font-size: 13px;
+  }
+
+  .focusAreas {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .focusAreas h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .focusGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .focusCard {
+    padding: 24px 20px;
+  }
+
+  .focusIcon {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .focusCard h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .focusCard p {
+    font-size: 13px;
+  }
+
+  .nextSteps {
+    padding: 35px 20px;
+  }
+
+  .nextSteps h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .nextSteps p {
+    font-size: 14px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .ctaBtn {
+    padding: 16px 28px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Responsive - Small Phones */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .heroImage {
+    max-width: 280px;
+  }
+
+  .question h2 {
+    font-size: 18px;
+  }
+
+  .option {
+    padding: 14px 16px;
+  }
+
+  .optionText {
+    font-size: 13px;
+  }
+
+  .navButtons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btnSecondary {
+    order: 2;
+  }
+
+  .btnPrimary {
+    order: 1;
+  }
+
+  .scoreCircle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .scoreNumber {
+    font-size: 36px;
+  }
+
+  .results h2 {
+    font-size: 22px;
+  }
+
+  .resultsText {
+    font-size: 14px;
+  }
+
+  .focusAreas h3 {
+    font-size: 18px;
+  }
+
+  .nextSteps h3 {
+    font-size: 20px;
+  }
+}
+
+/* Responsive - Very Small Phones */
+@media (max-width: 380px) {
+  .hero {
+    padding: 30px 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .assessment {
+    padding: 24px 16px;
+  }
+
+  .question h2 {
+    font-size: 17px;
+  }
+
+  .option {
+    padding: 12px 14px;
+  }
+
+  .results {
+    padding: 24px 16px 40px;
+  }
+
+  .category {
+    padding: 16px;
+  }
+
+  .focusAreas {
+    padding: 24px 16px;
+  }
+
+  .focusCard {
+    padding: 20px 16px;
+  }
+
+  .nextSteps {
+    padding: 30px 16px;
   }
 }

@@ -38,18 +38,18 @@ export default function Blog() {
           <p>Practical wisdom for emotional mastery, leadership, and living a more connected life.</p>
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
-              <span className={styles.statNumber}>50+</span>
-              <span className={styles.statLabel}>Articles</span>
+              <span className={styles.statNumber}>EQ</span>
+              <span className={styles.statLabel}>Leadership</span>
             </div>
             <div className={styles.heroDivider} />
             <div className={styles.heroStat}>
-              <span className={styles.statNumber}>10k+</span>
-              <span className={styles.statLabel}>Readers</span>
+              <span className={styles.statNumber}>Self</span>
+              <span className={styles.statLabel}>Awareness</span>
             </div>
             <div className={styles.heroDivider} />
             <div className={styles.heroStat}>
-              <span className={styles.statNumber}>Weekly</span>
-              <span className={styles.statLabel}>New Posts</span>
+              <span className={styles.statNumber}>Growth</span>
+              <span className={styles.statLabel}>Mindset</span>
             </div>
           </div>
         </div>

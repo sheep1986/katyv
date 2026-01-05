@@ -821,17 +821,24 @@
   font-weight: 700;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 1024px) {
-  .heroInner,
-  .aboutInner {
+  .heroInner {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
+    padding: 40px 30px;
   }
 
   .heroContent {
     padding-right: 0;
     text-align: center;
+    order: 1;
+  }
+
+  .heroImage {
+    order: 2;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .heroText {
@@ -842,18 +849,39 @@
     justify-content: center;
   }
 
+  .aboutInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .aboutImages {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
   .aboutOverlay {
     display: none;
   }
 
-  .eqCards,
-  .methodCards,
-  .testimonialCards,
-  .pricingCards,
   .whoCards {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  .eqCards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .methodCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonialCards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricingCards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .gallery {
@@ -861,71 +889,312 @@
   }
 }
 
+/* Responsive - Mobile */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 70px;
+  }
+
+  .heroInner {
+    padding: 30px 20px 50px;
+    gap: 30px;
+  }
+
+  .heroContent {
+    order: 1 !important;
+  }
+
+  .heroImage {
+    order: 2 !important;
+    display: none; /* Hide hero image on mobile - content comes first */
+  }
+
   .hero h1 {
-    font-size: 40px;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .heroText {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .heroBtn {
+    padding: 16px 28px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
   }
 
   .heroStats {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 30px;
   }
 
-  .aboutFeatures {
-    grid-template-columns: 1fr;
+  .stat {
+    text-align: center;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
+  .stat h3 {
+    font-size: 28px;
   }
 
-  .heroInner,
-  .aboutInner,
-  .whoInner,
-  .whyEqInner,
-  .methodInner,
-  .testimonialsInner,
-  .pricingInner,
-  .faqInner {
+  /* About */
+  .about {
     padding: 60px 20px;
   }
 
-  .about,
-  .whoIHelp,
-  .whyEq,
-  .method,
-  .testimonials,
-  .pricing,
-  .faq,
+  .aboutInner {
+    gap: 30px;
+  }
+
+  .aboutImages {
+    position: relative;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .aboutImages img:first-child {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .aboutContent h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .aboutContent p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .aboutFeatures {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .featureIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .feature h4 {
+    font-size: 13px;
+  }
+
+  .feature p {
+    font-size: 11px;
+  }
+
+  /* Who I Help */
+  .whoIHelp {
+    padding: 60px 20px;
+  }
+
+  .whoCards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .whoCard {
+    padding: 30px 24px;
+  }
+
+  .whoCard h3 {
+    font-size: 20px;
+  }
+
+  /* Why EQ */
+  .whyEq {
+    padding: 60px 20px;
+  }
+
+  .eqCards {
+    grid-template-columns: 1fr;
+  }
+
+  .eqCard {
+    padding: 35px 25px;
+  }
+
+  .eqCardIcon {
+    font-size: 36px;
+  }
+
+  .eqCardStat {
+    font-size: 40px;
+  }
+
+  /* Method */
+  .method {
+    padding: 60px 20px;
+  }
+
+  .methodCards {
+    grid-template-columns: 1fr;
+  }
+
+  .methodCard {
+    padding: 30px 24px;
+  }
+
+  .methodNum {
+    font-size: 42px;
+  }
+
+  .methodCard h3 {
+    font-size: 18px;
+  }
+
+  /* Gallery - Hidden on mobile for cleaner layout */
+  .gallery {
+    display: none;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 60px 20px;
+  }
+
+  .testimonialCards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialCard {
+    padding: 35px 25px;
+  }
+
+  .testimonialQuote {
+    font-size: 60px;
+    top: 5px;
+    left: 15px;
+  }
+
+  /* Pricing */
+  .pricing {
+    padding: 60px 20px;
+  }
+
+  .pricingCards {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .pricingCard {
+    padding: 40px 30px;
+  }
+
+  .pricingCard h3 {
+    font-size: 22px;
+  }
+
+  .pricingPrice {
+    font-size: 36px;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 60px 20px;
+  }
+
+  .faqQuestion {
+    font-size: 17px;
+    padding: 20px 0;
+  }
+
+  /* CTA */
   .cta {
-    padding: 80px 20px;
+    padding: 60px 20px;
   }
 
   .ctaInner {
     grid-template-columns: 1fr;
-    padding: 40px 24px;
-    gap: 40px;
+    padding: 30px 20px;
+    gap: 30px;
   }
 
   .ctaContent {
     text-align: center;
   }
 
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .ctaContent > p {
+    font-size: 15px;
+  }
+
   .ctaButtons {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaBtn,
+  .ctaBtnSecondary {
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
   }
 
   .ctaFeatures {
     padding-left: 0;
     border-left: none;
-    padding-top: 30px;
+    padding-top: 25px;
     border-top: 1px solid #eee;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
 
-  .cta h2 {
+  .ctaNote {
+    font-size: 12px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hero h1 {
     font-size: 28px;
+  }
+
+  .heroStats {
+    gap: 16px;
+  }
+
+  .stat h3 {
+    font-size: 28px;
+  }
+
+  .aboutContent h2 {
+    font-size: 24px;
+  }
+
+  .pricingCards {
+    max-width: 100%;
   }
 }

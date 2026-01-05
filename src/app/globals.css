@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Force light mode */
+:root,
+html,
+html.dark,
+.dark {
+  color-scheme: light;
+}
+
 :root {
   --coral: #e8847c;
   --coral-light: #f0a8a2;
@@ -15,8 +23,9 @@
 
 body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--dark);
+  background: var(--bg) !important;
+  background-color: #FAF9F7 !important;
+  color: var(--dark) !important;
   line-height: 1.6;
 }
 

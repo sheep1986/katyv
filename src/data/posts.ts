@@ -15,7 +15,7 @@ export const author = {
   name: 'Katerina Vladimirovna',
   role: 'EQ Coach & Leadership Consultant',
   image: '/images/WhatsApp Image 2026-01-03 at 21.29.46.jpeg',
-  bio: 'Katerina helps leaders develop emotional mastery for more fulfilling careers, relationships, and lives. With over 15 years of experience, she has guided hundreds of executives and entrepreneurs to breakthrough results.',
+  bio: 'I help leaders develop emotional mastery for more fulfilling careers, relationships, and lives. With over 15 years of experience, I have guided hundreds of executives and entrepreneurs to breakthrough results.',
 };
 
 export const posts: BlogPost[] = [

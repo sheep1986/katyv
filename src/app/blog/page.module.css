@@ -348,30 +348,60 @@
   .featured {
     grid-column: span 2;
   }
+
+  .featured h3 {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 20px 60px;
+    padding: 100px 20px 50px;
   }
 
   .hero h1 {
-    font-size: 36px;
+    font-size: 32px;
+  }
+
+  .hero > .heroContent > p {
+    font-size: 16px;
   }
 
   .heroStats {
     flex-direction: column;
-    gap: 20px;
-    padding: 24px 30px;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+
+  .statNumber {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 10px;
   }
 
   .heroDivider {
-    width: 60px;
+    width: 50px;
     height: 1px;
+  }
+
+  .blogContent {
+    padding: 30px 20px;
+  }
+
+  .categories {
+    margin-bottom: 30px;
+  }
+
+  .categoryBtn {
+    padding: 10px 18px;
+    font-size: 12px;
   }
 
   .blogGrid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .featured {
@@ -380,6 +410,39 @@
 
   .featured .blogImage {
     aspect-ratio: 16/10;
+  }
+
+  .featured .blogCardContent {
+    padding: 24px;
+  }
+
+  .featured h3 {
+    font-size: 22px;
+  }
+
+  .blogCardContent {
+    padding: 20px;
+  }
+
+  .blogCard h3 {
+    font-size: 18px;
+  }
+
+  .blogExcerpt {
+    font-size: 13px;
+  }
+
+  .newsletter {
+    padding: 50px 20px;
+    margin-top: 40px;
+  }
+
+  .newsletter h2 {
+    font-size: 26px;
+  }
+
+  .newsletter p {
+    font-size: 14px;
   }
 
   .newsletterForm {
@@ -391,7 +454,17 @@
     width: 100%;
   }
 
-  .blogContent {
-    padding: 40px 20px;
+  .newsletterForm button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .blogCard h3 {
+    font-size: 17px;
   }
 }
