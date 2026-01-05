@@ -104,7 +104,7 @@ export default function Blog() {
 
       <section className={styles.newsletter}>
         <h2>Get EQ Insights Weekly</h2>
-        <p>Join 5,000+ leaders receiving practical emotional intelligence tips every Thursday.</p>
+        <p>Join a growing community of leaders receiving practical emotional intelligence tips every Thursday.</p>
         <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
           <input
             type="email"
