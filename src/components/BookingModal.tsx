@@ -10,11 +10,11 @@ interface BookingModalProps {
 
 const CALENDLY_URL = 'https://calendly.com/fun-adventures-by-katy/30min';
 
-// Stripe payment links - UPDATE THESE with your actual Stripe payment links
+// Stripe payment links
 const STRIPE_LINKS: { [key: string]: string } = {
-  single: 'STRIPE_LINK_EQ_INTENSIVE', // Replace with actual link
-  core: 'STRIPE_LINK_CORE_PROGRAM', // Replace with actual link
-  vip: 'STRIPE_LINK_VIP_IMMERSION', // Replace with actual link
+  single: 'https://buy.stripe.com/00w4gAdtY3165Dm1BMdAk01', // EQ Intensive €200
+  core: 'https://buy.stripe.com/28EcN675Aaty8Py0xIdAk02', // CORE Program €1,400
+  vip: 'https://buy.stripe.com/6oUbJ2gGa8lqe9SbcmdAk03', // VIP Immersion €4,200
 };
 
 declare global {
