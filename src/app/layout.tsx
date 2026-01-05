@@ -50,6 +50,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} data-theme="light" style={{ colorScheme: 'light' }}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+              }
+              if (!window.location.hash) {
+                window.scrollTo(0, 0);
+              }
+            `,
+          }}
+        />
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </head>

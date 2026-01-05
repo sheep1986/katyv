@@ -1,19 +1,28 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { usePathname } from 'next/navigation';
+
+// Use useLayoutEffect on client, useEffect on server
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default function ScrollRestoration() {
   const pathname = usePathname();
 
-  // Disable browser's automatic scroll restoration on mount
-  useEffect(() => {
+  // Disable browser's automatic scroll restoration immediately
+  useIsomorphicLayoutEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+
+    // Force scroll to top on initial load (before paint)
+    const hash = window.location.hash;
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
-  // Handle scroll on page load and navigation
+  // Handle scroll on navigation
   useEffect(() => {
     const hash = window.location.hash;
 
@@ -31,7 +40,7 @@ export default function ScrollRestoration() {
         }
       }, 100);
     } else {
-      // No hash, scroll to top immediately
+      // No hash, scroll to top
       window.scrollTo(0, 0);
     }
   }, [pathname]);
