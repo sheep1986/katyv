@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ScrollToTop from '@/components/ScrollToTop';
 import styles from './page.module.css';
 
 // Based on Daniel Goleman's 5 components of Emotional Intelligence
@@ -415,6 +416,7 @@ export default function EQAssessment() {
             <Link href="/#contact" className={styles.ctaBtn}>BOOK A FREE DISCOVERY CALL</Link>
           </div>
         </section>
+        <ScrollToTop />
       </>
     );
   }
@@ -491,6 +493,7 @@ export default function EQAssessment() {
           </button>
         </div>
       </section>
+      <ScrollToTop />
     </>
   );
 }

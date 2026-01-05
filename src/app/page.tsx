@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
+import ScrollToTop from '@/components/ScrollToTop';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -385,6 +386,7 @@ export default function Home() {
 
       <Footer />
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ScrollToTop />
     </>
   );
 }

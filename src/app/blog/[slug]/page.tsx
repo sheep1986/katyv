@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts, author } from '@/data/posts';
+import ScrollToTop from '@/components/ScrollToTop';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -252,6 +253,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         )}
       </article>
+      <ScrollToTop />
     </>
   );
 }

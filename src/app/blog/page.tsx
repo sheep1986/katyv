@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { posts } from '@/data/posts';
+import ScrollToTop from '@/components/ScrollToTop';
 import styles from './page.module.css';
 
 const categories = ['All Posts', 'Self-Awareness', 'Leadership', 'Relationships', 'Stress & Anxiety'];
@@ -115,6 +116,7 @@ export default function Blog() {
           <button type="submit">SUBSCRIBE</button>
         </form>
       </section>
+      <ScrollToTop />
     </>
   );
 }
