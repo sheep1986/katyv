@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import ScrollRestoration from "@/components/ScrollRestoration";
 import "./globals.css";
 
 const inter = Inter({
@@ -52,7 +53,10 @@ export default function RootLayout({
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollRestoration />
+        {children}
+      </body>
     </html>
   );
 }
